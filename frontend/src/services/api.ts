@@ -1,5 +1,5 @@
 export const registerUser = async (data: any) => {
-  const res = await fetch("http://localhost:5000/api/auth/register", {
+  const res = await fetch("https://vi-notes-di2i.onrender.com/api/auth/register", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
@@ -8,7 +8,7 @@ export const registerUser = async (data: any) => {
 };
 
 export const loginUser = async (data: any) => {
-  const res = await fetch("http://localhost:5000/api/auth/login", {
+  const res = await fetch("https://vi-notes-di2i.onrender.com/api/auth/login", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
@@ -17,7 +17,7 @@ export const loginUser = async (data: any) => {
 };
 
 export const saveSession = async (data: any) => {
-  const res = await fetch("http://localhost:5000/api/session/save", {
+  const res = await fetch("https://vi-notes-di2i.onrender.com/api/session/save", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
@@ -26,7 +26,7 @@ export const saveSession = async (data: any) => {
 };
 
 export const updateSession = async (sessionId: string, data: any) => {
-  const res = await fetch(`http://localhost:5000/api/session/${sessionId}`, {
+  const res = await fetch(`https://vi-notes-di2i.onrender.com/api/session/${sessionId}`, {
     method: "PUT",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
@@ -36,7 +36,7 @@ export const updateSession = async (sessionId: string, data: any) => {
 
 export const getUserSessions = async (userId: string, limit: number = 20, skip: number = 0) => {
   const res = await fetch(
-    `http://localhost:5000/api/session/user/${userId}?limit=${limit}&skip=${skip}`,
+    `https://vi-notes-di2i.onrender.com/api/session/user/${userId}?limit=${limit}&skip=${skip}`,
     {
       method: "GET",
       headers: {"Content-Type": "application/json"}
@@ -47,7 +47,7 @@ export const getUserSessions = async (userId: string, limit: number = 20, skip: 
 
 export const searchSessions = async (userId: string, query: string, limit: number = 20, skip: number = 0) => {
   const res = await fetch(
-    `http://localhost:5000/api/session/search/${userId}?query=${encodeURIComponent(query)}&limit=${limit}&skip=${skip}`,
+    `https://vi-notes-di2i.onrender.com/api/session/search/${userId}?query=${encodeURIComponent(query)}&limit=${limit}&skip=${skip}`,
     {
       method: "GET",
       headers: {"Content-Type": "application/json"}
@@ -58,7 +58,7 @@ export const searchSessions = async (userId: string, query: string, limit: numbe
 
 export const getSessionStats = async (userId: string) => {
   const res = await fetch(
-    `http://localhost:5000/api/session/stats/${userId}`,
+    `https://vi-notes-di2i.onrender.com/api/session/stats/${userId}`,
     {
       method: "GET",
       headers: {"Content-Type": "application/json"}
@@ -69,7 +69,7 @@ export const getSessionStats = async (userId: string) => {
 
 export const getSessionById = async (sessionId: string) => {
   const res = await fetch(
-    `http://localhost:5000/api/session/${sessionId}`,
+    `https://vi-notes-di2i.onrender.com/api/session/${sessionId}`,
     {
       method: "GET",
       headers: {"Content-Type": "application/json"}
@@ -80,7 +80,7 @@ export const getSessionById = async (sessionId: string) => {
 
 export const deleteSession = async (sessionId: string) => {
   const res = await fetch(
-    `http://localhost:5000/api/session/${sessionId}`,
+    `https://vi-notes-di2i.onrender.com/api/session/${sessionId}`,
     {
       method: "DELETE",
       headers: {"Content-Type": "application/json"}
